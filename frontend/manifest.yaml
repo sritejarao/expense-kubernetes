@@ -24,7 +24,8 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: sriteja90/frontend:1.0.0
+      # changes the image
+        image: sriteja90/frontend:1.0.1 
 ---
 apiVersion: v1
 kind: Service
