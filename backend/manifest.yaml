@@ -1,0 +1,42 @@
+#Manifest file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backend
+  namespace: expense
+  labels:
+    app: backend
+    teir: backend
+    project:  expense
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: backend
+      teir: backend
+      project:  expense
+  template:
+    metadata:
+      labels:
+        app: backend
+        teir: backend
+        project:  expense
+    spec:
+      containers:
+      - name: backend
+        image: sriteja90/backend:1.0.0
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: backend
+  namespace: expense
+spec:
+  selector:
+      app: backend
+      teir: backend
+      project:  expense
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080
