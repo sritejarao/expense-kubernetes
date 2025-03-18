@@ -1,0 +1,27 @@
+#Manifest file
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql
+  namespace: K8-expense
+  labels:
+    app: mysql
+    teir: mysql
+    project:  expense
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mysql
+      teir: mysql
+      project:  expense
+  template:
+    metadata:
+      labels:
+        app: mysql
+        teir: mysql
+        project:  expense
+    spec:
+      containers:
+      - name: mysql
+        image: sriteja90/mysql:1.0.0
