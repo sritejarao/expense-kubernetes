@@ -3,7 +3,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
-  namespace: K8-expense
+  namespace: expense
   labels:
     app: mysql
     teir: mysql
